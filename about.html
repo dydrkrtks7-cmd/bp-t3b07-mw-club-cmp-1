@@ -1,0 +1,405 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>망원 클럽 비교 - 상세 정보</title>
+    <meta name="description" content="망원 클럽 비교의 상세 정보 페이지입니다. 망원동 클럽들의 위치, 운영시간, 가격, 분위기까지 꼼꼼하게 비교해보세요. 클럽별 특징을 한눈에 확인하고 오늘 밤 딱 맞는 클럽을 찾아보세요.">
+    <meta name="keywords" content="망원 클럽 정보, 망원동 클럽 상세, 망원 클럽 위치, 망원 클럽 가격, 망원 클럽 운영시간, 망원 클럽 분위기">
+    <meta name="author" content="망원 클럽 비교">
+    <meta name="robots" content="index, follow">
+    <meta name="bpaas-design-system" content="editorial-apple">
+    <meta name="bpaas-design-theme" content="kr-warm-grid">
+    <link rel="canonical" href="https://t3b07-mw-club-cmp-1.vercel.app/info">
+    <meta property="og:title" content="망원 클럽 비교 - 상세 정보">
+    <meta property="og:description" content="망원동 클럽들의 모든 정보를 한자리에! 위치, 가격, 분위기까지 비교해보고 오늘 밤 최고의 클럽을 찾아보세요.">
+    <meta property="og:image" content="https://t3b07-mw-club-cmp-1.vercel.app/og-info.jpg">
+    <meta property="og:url" content="https://t3b07-mw-club-cmp-1.vercel.app/info">
+    <meta property="og:type" content="website">
+    <meta property="og:locale" content="ko_KR">
+    <meta property="og:site_name" content="망원 클럽 비교">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="망원 클럽 비교 - 상세 정보">
+    <meta name="twitter:description" content="망원동 클럽들의 모든 정보를 한자리에! 위치, 가격, 분위기까지 비교해보고 오늘 밤 최고의 클럽을 찾아보세요.">
+    <meta name="twitter:image" content="https://t3b07-mw-club-cmp-1.vercel.app/og-info.jpg">
+    <style>
+        *, *::before, *::after {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+            background: #faf8f5;
+            color: #1a1a1a;
+            line-height: 1.6;
+            -webkit-font-smoothing: antialiased;
+        }
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 24px;
+        }
+        nav {
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            background: rgba(250, 248, 245, 0.95);
+            backdrop-filter: blur(12px);
+            border-bottom: 1px solid #e8e3dc;
+        }
+        .nav-inner {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            height: 64px;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 24px;
+        }
+        .logo {
+            text-decoration: none;
+            font-size: 20px;
+            font-weight: 700;
+            color: #1a1a1a;
+        }
+        .logo span {
+            color: #e85d3a;
+        }
+        .nav-links {
+            display: flex;
+            gap: 32px;
+            list-style: none;
+        }
+        .nav-links a {
+            text-decoration: none;
+            color: #4a4a4a;
+            font-size: 15px;
+            font-weight: 500;
+            transition: color 0.2s;
+        }
+        .nav-links a:hover {
+            color: #e85d3a;
+        }
+        .hamburger {
+            display: none;
+            flex-direction: column;
+            gap: 5px;
+            background: none;
+            border: none;
+            cursor: pointer;
+            padding: 4px;
+        }
+        .hamburger span {
+            display: block;
+            width: 24px;
+            height: 2px;
+            background: #1a1a1a;
+            border-radius: 2px;
+            transition: 0.3s;
+        }
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none;
+                position: absolute;
+                top: 64px;
+                left: 0;
+                right: 0;
+                background: rgba(250, 248, 245, 0.98);
+                flex-direction: column;
+                padding: 20px 24px;
+                gap: 16px;
+                border-bottom: 1px solid #e8e3dc;
+            }
+            .nav-links.active {
+                display: flex;
+            }
+            .hamburger {
+                display: flex;
+            }
+        }
+
+        /* Hero Section */
+        .hero {
+            padding: 80px 0 60px;
+            text-align: center;
+        }
+        .hero h1 {
+            font-size: 48px;
+            font-weight: 800;
+            letter-spacing: -1px;
+            margin-bottom: 16px;
+            background: linear-gradient(135deg, #1a1a1a 0%, #e85d3a 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        .hero p {
+            font-size: 18px;
+            color: #666;
+            max-width: 600px;
+            margin: 0 auto 24px;
+        }
+        .hero .tel-link {
+            display: inline-block;
+            padding: 12px 32px;
+            background: #e85d3a;
+            color: white;
+            text-decoration: none;
+            border-radius: 8px;
+            font-weight: 600;
+            font-size: 16px;
+            transition: background 0.2s;
+        }
+        .hero .tel-link:hover {
+            background: #d14d2e;
+        }
+
+        /* Info Cards Grid */
+        .info-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 24px;
+            padding: 40px 0;
+        }
+        .info-card {
+            background: white;
+            border-radius: 16px;
+            padding: 32px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+            border: 1px solid #e8e3dc;
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+        .info-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 8px 24px rgba(0,0,0,0.08);
+        }
+        .info-card h3 {
+            font-size: 22px;
+            font-weight: 700;
+            margin-bottom: 8px;
+            color: #1a1a1a;
+        }
+        .info-card .subtitle {
+            font-size: 14px;
+            color: #e85d3a;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            margin-bottom: 16px;
+        }
+        .info-card p {
+            color: #555;
+            font-size: 15px;
+            line-height: 1.7;
+        }
+        .info-card .detail-list {
+            margin-top: 16px;
+            list-style: none;
+        }
+        .info-card .detail-list li {
+            padding: 8px 0;
+            border-bottom: 1px solid #f0ece6;
+            font-size: 14px;
+            color: #555;
+            display: flex;
+            justify-content: space-between;
+        }
+        .info-card .detail-list li:last-child {
+            border-bottom: none;
+        }
+        .info-card .detail-list .label {
+            font-weight: 600;
+            color: #1a1a1a;
+        }
+
+        /* Comparison Table Section */
+        .comparison-section {
+            padding: 60px 0;
+        }
+        .comparison-section h2 {
+            font-size: 32px;
+            font-weight: 700;
+            margin-bottom: 32px;
+            text-align: center;
+        }
+        .comparison-table {
+            width: 100%;
+            border-collapse: collapse;
+            background: white;
+            border-radius: 16px;
+            overflow: hidden;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+            border: 1px solid #e8e3dc;
+        }
+        .comparison-table th {
+            background: #1a1a1a;
+            color: white;
+            padding: 16px 20px;
+            text-align: left;
+            font-weight: 600;
+            font-size: 14px;
+        }
+        .comparison-table td {
+            padding: 16px 20px;
+            border-bottom: 1px solid #f0ece6;
+            font-size: 14px;
+            color: #555;
+        }
+        .comparison-table tr:last-child td {
+            border-bottom: none;
+        }
+        .comparison-table tr:hover td {
+            background: #faf8f5;
+        }
+        .comparison-table .highlight {
+            color: #e85d3a;
+            font-weight: 600;
+        }
+
+        /* FAQ Section */
+        .faq-section {
+            padding: 60px 0;
+            background: #f5f2ed;
+            border-radius: 24px;
+            margin: 40px 0;
+        }
+        .faq-section h2 {
+            font-size: 32px;
+            font-weight: 700;
+            margin-bottom: 40px;
+            text-align: center;
+        }
+        .faq-item {
+            max-width: 700px;
+            margin: 0 auto 16px;
+            background: white;
+            border-radius: 12px;
+            padding: 20px 24px;
+            border: 1px solid #e8e3dc;
+        }
+        .faq-item h4 {
+            font-size: 16px;
+            font-weight: 600;
+            margin-bottom: 8px;
+            color: #1a1a1a;
+        }
+        .faq-item p {
+            font-size: 14px;
+            color: #666;
+            line-height: 1.6;
+        }
+
+        /* Footer */
+        footer {
+            padding: 40px 0;
+            text-align: center;
+            border-top: 1px solid #e8e3dc;
+            color: #999;
+            font-size: 14px;
+        }
+
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 32px;
+            }
+            .hero p {
+                font-size: 16px;
+            }
+            .info-grid {
+                grid-template-columns: 1fr;
+            }
+            .comparison-table {
+                font-size: 12px;
+            }
+            .comparison-table th, .comparison-table td {
+                padding: 12px 14px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<nav>
+    <div class="nav-inner">
+        <a href="/" class="logo">망원클럽<span>비교</span></a>
+        <button class="hamburger" onclick="document.querySelector('.nav-links').classList.toggle('active')">
+            <span></span><span></span><span></span>
+        </button>
+        <ul class="nav-links">
+            <li><a href="/">홈</a></li>
+            <li><a href="/info">정보</a></li>
+            <li><a href="/review">후기</a></li>
+            <li><a href="/map">지도</a></li>
+        </ul>
+    </div>
+</nav>
+
+<main>
+    <section class="hero">
+        <div class="container">
+            <h1>망원 클럽 A to Z</h1>
+            <p>위치부터 가격까지, 망원동 클럽들의 모든 정보를 한곳에 모았어요. 궁금한 게 있으면 언제든 전화주세요!</p>
+            <a href="tel:0212345678" class="tel-link">📞 문의하기</a>
+        </div>
+    </section>
+
+    <section class="container">
+        <div class="info-grid">
+            <div class="info-card">
+                <div class="subtitle">📍 위치 & 접근성</div>
+                <h3>망원 클럽 거리</h3>
+                <p>망원동 클럽들은 대부분 망원역 1번 출구에서 도보 5~10분 거리에 몰려있어요. 주말에는 주차가 어려우니 대중교통을 추천! 밤늦게도 버스가 자주 다녀서 귀가도 편해요.</p>
+                <ul class="detail-list">
+                    <li><span class="label">망원역 도보</span> 3~8분</li>
+                    <li><span class="label">주차 가능</span> 일부 클럽 전용 주차장</li>
+                    <li><span class="label">야간 버스</span> 30분 간격 운행</li>
+                </ul>
+            </div>
+
+            <div class="info-card">
+                <div class="subtitle">🕐 운영시간</div>
+                <h3>언제 갈까?</h3>
+                <p>보통 오후 8시부터 문 열고, 진짜 재미는 11시 이후부터! 주말에는 새벽 4~5시까지 영업하는 곳이 많아요. 평일에는 사람이 적을 수 있으니 체크 필수!</p>
+                <ul class="detail-list">
+                    <li><span class="label">평일</span> 20:00 ~ 02:00</li>
+                    <li><span class="label">금요일</span> 20:00 ~ 04:00</li>
+                    <li><span class="label">토요일</span> 19:00 ~ 05:00</li>
+                    <li><span class="label">일요일</span> 휴무 or 20:00 ~ 24:00</li>
+                </ul>
+            </div>
+
+            <div class="info-card">
+                <div class="subtitle">💰 가격 정보</div>
+                <h3>지갑 사정에 맞게</h3>
+                <p>커버차지는 보통 15,000~25,000원 선이에요. 음료는 8,000원부터 시작하고, 병째 시키면 50,000~100,000원까지 다양. 처음 가는 클럽은 커버차지부터 체크하세요!</p>
+                <ul class="detail-list">
+                    <li><span class="label">커버차지</span> 15,000 ~ 25,000원</li>
+                    <li><span class="label">맥주</span> 8,000 ~ 12,000원</li>
+                    <li><span class="label">양주(병)</span> 50,000 ~ 120,000원</li>
+                    <li><span class="label">얼리버드 할인</span> 10시 전 입장 5,000원 할인</li>
+                </ul>
+            </div>
+
+            <div class="info-card">
+                <div class="subtitle">🎵 분위기 & 음악</div>
+                <h3>취향저격 클럽 찾기</h3>
+                <p>힙합이 주류를 이루지만, 하우스나 얼터너티브를 틀어주는 곳도 있어요. 분위기는 크게 세 가지: 활기찬 파티 분위기, 감성적인 라운지, 그리고 복합 문화공간 느낌. 내 취향에 맞는 곳을 골라보세요!</p>
+                <ul class="detail-list">
+                    <li><span class="label">힙합/랩</span> 60%</li>
+                    <li><span class="label">하우스/일렉트로닉</span> 25%</li>
+                    <li><span class="label">얼터너티브/인디</span> 15%</li>
+                </ul>
+            </div>
+
+            <div class="info-card">
+                <div class="subtitle">👥 인원 & 예약</div>
+                <h3>단체도 환영!</h3>
+                <p>4~6명이 오기 좋은 테이블이 많고, 단체 예약은 미리 전화하는 게 안전해요. 주말에는 웨이팅이 있을 수 있으니 2~3일 전에 예약하는 걸 추천! 저희 번호로 연락주시면 대신 예약도 도와드려요.</p>
+                <ul class="detail-list">
+                    <li><span class="label">추천 인원</span> 4~6명</li>
+                    <li><span class="label">단체 예약</span> 8명 이상 필수</li>
+                    <li><span class="label">예약 마감</span> 주말 2~3일 전 마감</li>
+                </ul>
+</body>
+</html>
