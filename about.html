@@ -3,403 +3,213 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>망원 클럽 비교 - 상세 정보</title>
-    <meta name="description" content="망원 클럽 비교의 상세 정보 페이지입니다. 망원동 클럽들의 위치, 운영시간, 가격, 분위기까지 꼼꼼하게 비교해보세요. 클럽별 특징을 한눈에 확인하고 오늘 밤 딱 맞는 클럽을 찾아보세요.">
-    <meta name="keywords" content="망원 클럽 정보, 망원동 클럽 상세, 망원 클럽 위치, 망원 클럽 가격, 망원 클럽 운영시간, 망원 클럽 분위기">
-    <meta name="author" content="망원 클럽 비교">
-    <meta name="robots" content="index, follow">
-    <meta name="bpaas-design-system" content="editorial-apple">
-    <meta name="bpaas-design-theme" content="kr-warm-grid">
+    <title>망원동 클럽 정보 — 위치, 분위기, 가격대별 상세 분석 가이드</title>
+    <meta name="description" content="망원동 지역의 클럽 방문을 위한 실전 정보입니다. 지하철 접근성, 층별 분위기, 음료 가격대 등 데이터 기반 비교 자료를 제공합니다.">
+    <meta name="keywords" content="망원동 클럽, 망원동 nightlife, 클럽 위치 분석, 망원동 분위기, 클럽 가격대">
+    <meta name="author" content="Seoul Local Guide">
     <link rel="canonical" href="https://mangwon-review-zone.link-hub.org/about.html">
-    <meta property="og:title" content="망원 클럽 비교 - 상세 정보">
-    <meta property="og:description" content="망원동 클럽들의 모든 정보를 한자리에! 위치, 가격, 분위기까지 비교해보고 오늘 밤 최고의 클럽을 찾아보세요.">
-    <meta property="og:image" content="https://t3b07-mw-club-cmp-1.vercel.app/og-info.jpg">
-    <meta property="og:url" content="https://mangwon-review-zone.link-hub.org/about.html">
+    <meta property="og:title" content="망원동 클럽 정보 — 위치, 분위기, 가격대별 상세 분석 가이드">
+    <meta property="og:description" content="망원동 지역의 클럽 방문을 위한 실전 정보입니다. 지하철 접근성, 층별 분위기, 음료 가격대 등 데이터 기반 비교 자료를 제공합니다.">
     <meta property="og:type" content="website">
-    <meta property="og:locale" content="ko_KR">
-    <meta property="og:site_name" content="망원 클럽 비교">
-    <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="망원 클럽 비교 - 상세 정보">
-    <meta name="twitter:description" content="망원동 클럽들의 모든 정보를 한자리에! 위치, 가격, 분위기까지 비교해보고 오늘 밤 최고의 클럽을 찾아보세요.">
-    <meta name="twitter:image" content="https://t3b07-mw-club-cmp-1.vercel.app/og-info.jpg">
+
+    <!-- Import Fonts -->
     <style>
-        *, *::before, *::after {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
+        @import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,400&family=Noto+Serif+KR:wght@300;400;500;700&display=swap');
+
+        :root {
+            --bg-color: #f9f9f9;
+            --text-primary: #222;
+            --text-secondary: #555;
+            --accent-color: #1a1a1a;
+            --border-color: #e0e0e0;
+            --font-heading: 'Cormorant+Garamond', serif;
+            --font-body: 'Noto Serif KR', serif;
+            --spacing-unit: 1.5rem;
         }
+
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+        
         body {
-            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
-            background: #faf8f5;
-            color: #1a1a1a;
+            font-family: var(--font-body);
+            background-color: var(--bg-color);
+            color: var(--text-primary);
             line-height: 1.6;
-            -webkit-font-smoothing: antialiased;
-        }
-        .container {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 0 24px;
-        }
-        nav {
-            position: sticky;
-            top: 0;
-            z-index: 100;
-            background: rgba(250, 248, 245, 0.95);
-            backdrop-filter: blur(12px);
-            border-bottom: 1px solid #e8e3dc;
-        }
-        .nav-inner {
             display: flex;
-            justify-content: space-between;
-            align-items: center;
-            height: 64px;
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 0 24px;
-        }
-        .logo {
-            text-decoration: none;
-            font-size: 20px;
-            font-weight: 700;
-            color: #1a1a1a;
-        }
-        .logo span {
-            color: #e85d3a;
-        }
-        .nav-links {
-            display: flex;
-            gap: 32px;
-            list-style: none;
-        }
-        .nav-links a {
-            text-decoration: none;
-            color: #4a4a4a;
-            font-size: 15px;
-            font-weight: 500;
-            transition: color 0.2s;
-        }
-        .nav-links a:hover {
-            color: #e85d3a;
-        }
-        .hamburger {
-            display: none;
-            flex-direction: column;
-            gap: 5px;
-            background: none;
-            border: none;
-            cursor: pointer;
-            padding: 4px;
-        }
-        .hamburger span {
-            display: block;
-            width: 24px;
-            height: 2px;
-            background: #1a1a1a;
-            border-radius: 2px;
-            transition: 0.3s;
-        }
-        @media (max-width: 768px) {
-            .nav-links {
-                display: none;
-                position: absolute;
-                top: 64px;
-                left: 0;
-                right: 0;
-                background: rgba(250, 248, 245, 0.98);
-                flex-direction: column;
-                padding: 20px 24px;
-                gap: 16px;
-                border-bottom: 1px solid #e8e3dc;
-            }
-            .nav-links.active {
-                display: flex;
-            }
-            .hamburger {
-                display: flex;
-            }
+            min-height: 100vh;
         }
 
-        /* Hero Section */
-        .hero {
-            padding: 80px 0 60px;
-            text-align: center;
-        }
-        .hero h1 {
-            font-size: 48px;
-            font-weight: 800;
-            letter-spacing: -1px;
-            margin-bottom: 16px;
-            background: linear-gradient(135deg, #1a1a1a 0%, #e85d3a 100%);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
-        }
-        .hero p {
-            font-size: 18px;
-            color: #666;
-            max-width: 600px;
-            margin: 0 auto 24px;
-        }
-        .hero .tel-link {
-            display: inline-block;
-            padding: 12px 32px;
-            background: #e85d3a;
-            color: white;
-            text-decoration: none;
-            border-radius: 8px;
-            font-weight: 600;
-            font-size: 16px;
-            transition: background 0.2s;
-        }
-        .hero .tel-link:hover {
-            background: #d14d2e;
-        }
-
-        /* Info Cards Grid */
-        .info-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-            gap: 24px;
-            padding: 40px 0;
-        }
-        .info-card {
-            background: white;
-            border-radius: 16px;
-            padding: 32px;
-            box-shadow: 0 2px 8px rgba(0,0,0,0.04);
-            border: 1px solid #e8e3dc;
-            transition: transform 0.2s, box-shadow 0.2s;
-        }
-        .info-card:hover {
-            transform: translateY(-4px);
-            box-shadow: 0 8px 24px rgba(0,0,0,0.08);
-        }
-        .info-card h3 {
-            font-size: 22px;
-            font-weight: 700;
-            margin-bottom: 8px;
-            color: #1a1a1a;
-        }
-        .info-card .subtitle {
-            font-size: 14px;
-            color: #e85d3a;
-            font-weight: 600;
-            text-transform: uppercase;
-            letter-spacing: 0.5px;
-            margin-bottom: 16px;
-        }
-        .info-card p {
-            color: #555;
-            font-size: 15px;
-            line-height: 1.7;
-        }
-        .info-card .detail-list {
-            margin-top: 16px;
-            list-style: none;
-        }
-        .info-card .detail-list li {
-            padding: 8px 0;
-            border-bottom: 1px solid #f0ece6;
-            font-size: 14px;
-            color: #555;
+        /* Layout */
+        .layout-container {
             display: flex;
-            justify-content: space-between;
-        }
-        .info-card .detail-list li:last-child {
-            border-bottom: none;
-        }
-        .info-card .detail-list .label {
-            font-weight: 600;
-            color: #1a1a1a;
-        }
-
-        /* Comparison Table Section */
-        .comparison-section {
-            padding: 60px 0;
-        }
-        .comparison-section h2 {
-            font-size: 32px;
-            font-weight: 700;
-            margin-bottom: 32px;
-            text-align: center;
-        }
-        .comparison-table {
             width: 100%;
-            border-collapse: collapse;
-            background: white;
-            border-radius: 16px;
-            overflow: hidden;
-            box-shadow: 0 2px 8px rgba(0,0,0,0.04);
-            border: 1px solid #e8e3dc;
-        }
-        .comparison-table th {
-            background: #1a1a1a;
-            color: white;
-            padding: 16px 20px;
-            text-align: left;
-            font-weight: 600;
-            font-size: 14px;
-        }
-        .comparison-table td {
-            padding: 16px 20px;
-            border-bottom: 1px solid #f0ece6;
-            font-size: 14px;
-            color: #555;
-        }
-        .comparison-table tr:last-child td {
-            border-bottom: none;
-        }
-        .comparison-table tr:hover td {
-            background: #faf8f5;
-        }
-        .comparison-table .highlight {
-            color: #e85d3a;
-            font-weight: 600;
+            max-width: 1280px;
+            margin: 0 auto;
+            padding: 4rem 2rem;
+            gap: 4rem;
         }
 
-        /* FAQ Section */
-        .faq-section {
-            padding: 60px 0;
-            background: #f5f2ed;
-            border-radius: 24px;
-            margin: 40px 0;
-        }
-        .faq-section h2 {
-            font-size: 32px;
-            font-weight: 700;
-            margin-bottom: 40px;
-            text-align: center;
-        }
-        .faq-item {
-            max-width: 700px;
-            margin: 0 auto 16px;
-            background: white;
-            border-radius: 12px;
-            padding: 20px 24px;
-            border: 1px solid #e8e3dc;
-        }
-        .faq-item h4 {
-            font-size: 16px;
-            font-weight: 600;
-            margin-bottom: 8px;
-            color: #1a1a1a;
-        }
-        .faq-item p {
-            font-size: 14px;
-            color: #666;
-            line-height: 1.6;
+        /* Sidebar Navigation */
+        nav {
+            flex-shrink: 0;
+            width: 300px;
+            height: 100vh;
+            position: sticky;
+            top: 2rem;
+            border-right: 1px solid var(--border-color);
+            padding-right: 2rem;
         }
 
-        /* Footer */
-        footer {
-            padding: 40px 0;
-            text-align: center;
-            border-top: 1px solid #e8e3dc;
-            color: #999;
-            font-size: 14px;
+        nav ul { list-style: none; }
+        nav li { margin-bottom: 1.5rem; }
+        nav a {
+            text-decoration: none;
+            color: var(--text-secondary);
+            font-size: 0.95rem;
+            transition: color 0.3s ease;
+            display: block;
+            padding-left: 1rem;
+            border-left: 2px solid transparent;
         }
 
+        nav a:hover, nav a.active {
+            color: var(--text-primary);
+            border-left-color: var(--accent-color);
+        }
+
+        /* Main Content */
+        main {
+            flex-grow: 1;
+            padding-top: 2rem;
+        }
+
+        h1, h2, h3, h4 {
+            font-family: var(--font-heading);
+            color: var(--accent-color);
+            line-height: 1.3;
+        }
+
+        h1 { font-size: 3.5rem; margin-bottom: 2rem; letter-spacing: -0.02em; }
+        h2 { font-size: 2.5rem; margin-top: 4rem; margin-bottom: 1.5rem; border-bottom: 1px solid var(--border-color); padding-bottom: 1rem; }
+        h3 { font-size: 1.8rem; margin-top: 2.5rem; margin-bottom: 0.8rem; }
+        
+        p { margin-bottom: 1.5rem; color: var(--text-secondary); text-align: justify; }
+        
+        .meta-info {
+            font-family: 'Cormorant+Garamond', serif;
+            font-style: italic;
+            color: #888;
+            font-size: 0.9rem;
+            margin-bottom: 2rem;
+            display: flex;
+            gap: 2rem;
+        }
+
+        .info-box {
+            background: #fff;
+            border: 1px solid var(--border-color);
+            padding: 2rem;
+            border-radius: 4px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.03);
+        }
+
+        .highlight { font-weight: bold; color: var(--text-primary); }
+        
+        /* Responsive */
         @media (max-width: 768px) {
-            .hero h1 {
-                font-size: 32px;
-            }
-            .hero p {
-                font-size: 16px;
-            }
-            .info-grid {
-                grid-template-columns: 1fr;
-            }
-            .comparison-table {
-                font-size: 12px;
-            }
-            .comparison-table th, .comparison-table td {
-                padding: 12px 14px;
-            }
+            body { flex-direction: column; }
+            nav { width: 100%; height: auto; position: relative; top: 0; border-right: none; border-bottom: 1px solid var(--border-color); padding-bottom: 2rem; margin-bottom: 2rem; }
+            .layout-container { flex-direction: column; gap: 2rem; padding: 2rem 1.5rem; }
+            h1 { font-size: 2.5rem; }
+            h2 { font-size: 2rem; }
         }
     </style>
+  <meta property="og:url" content="https://mangwon-review-zone.link-hub.org/about.html">
 </head>
-<body>
+<body class="nav-present responsive-768">
 
-<nav>
-    <div class="nav-inner">
-        <a href="/" class="logo">망원클럽<span>비교</span></a>
-        <button class="hamburger" onclick="document.querySelector('.nav-links').classList.toggle('active')">
-            <span></span><span></span><span></span>
-        </button>
-        <ul class="nav-links">
-            <li><a href="/">홈</a></li>
-            <li><a href="/info">정보</a></li>
-            <li><a href="/review">후기</a></li>
-            <li><a href="/map">지도</a></li>
+<div class="layout-container">
+    <!-- Navigation -->
+    <nav>
+        <ul>
+            <li><a href="#" class="active">01. 망원동 클럽 정보 총론</a></li>
+            <li><a href="#">02. 접근성 및 이동 데이터</a></li>
+            <li><a href="#">03. 분위기별 층위 분석</a></li>
+            <li><a href="#">04. 가격대별 비용 구성</a></li>
+            <li><a href="#">05. 방문 전 체크리스트</a></li>
         </ul>
-    </div>
-</nav>
+    </nav>
 
-<main>
-    <section class="hero">
-        <div class="container">
-            <h1>망원 클럽 A to Z</h1>
-            <p>위치부터 가격까지, 망원동 클럽들의 모든 정보를 한곳에 모았어요. 궁금한 게 있으면 언제든 전화주세요!</p>
-            <a href="tel:0212345678" class="tel-link">📞 문의하기</a>
+    <!-- Main Content -->
+    <main>
+        <header class="info-header">
+            <div class="meta-info">
+                <span class="highlight">Region: Mangwon-dong</span>
+                <span class="highlight">Industry: Nightlife Club</span>
+                <span class="highlight">Category: Detailed Analysis</span>
+            </div>
+            <h1>망원동 클럽 정보 — 위치, 분위기, 가격대별 상세 분석 가이드</h1>
+        </header>
+
+        <section class="content-intro">
+            <p>
+                망원동은 서울 서구권의 핵심적인 엔터테인먼트 허브로 자리매김하고 있으며, 특히 클럽 문화의 발전에 있어 중요한 역할을 수행해 왔습니다. 본 섹션에서는 망원동 지역 내 주요 클럽들의 전반적인 특성을 이해하기 위한 기초 데이터를 제공합니다. 단순히 이름을 나열하는 것을 넘어, 해당 공간이 지닌 고유한 '맥락 (Context)'을 파악할 수 있도록 구성하였습니다. 망원동은 대규모 단지나 오피스 빌딩 밀집지역인 만큼, 직장인 및 학생 중심의 타겟팅이 이루어지는 경우가 많으며, 이는 클럽 운영 전략과 직접적인 연관이 있습니다.
+            </p>
+            <p>
+                본 분석 가이드는 방문자의 목적에 따라 가장 적합한 공간을 선택할 수 있도록 설계되었습니다. 예를 들어, 파티와 같은 에너지를 원한다면 대형 공간의 특성을 가진 곳을, 사교적 대화를 원한다면 소규모 intimate 한 장소를 선호할 수 있습니다. 아래 내용을 통해 망원동 클럽의 구조적 특징과 운영 패턴을 파악하여, 방문 전 정보를 충분히 수집하는 데 도움이 되기를 바랍니다.
+            </p>
+        </section>
+
+        <h2>01. 접근성 및 이동 데이터 분석</h2>
+        <div class="info-box">
+            <p>
+                망원동 클럽의 접근성은 지하철 2 호선과 6 호선의 환승 지점인 '망원역' 및 '사당역'을 중심으로 형성됩니다. 대부분의 주요 클럽은 이 역들로부터 도보로 10 분 내외에 위치하거나, 인근 상가 복합 단지 내에 자리하고 있어 이동 편의성이 매우 높습니다. 특히 야간 시간대에는 차량 이용이 제한되는 경우가 많으므로 대중교통 의존도가 높은 것을 고려해야 합니다.
+            </p>
+            <p>
+                주차 시설이 없는 곳이 대부분이며, 일부 고급 클럽을 제외하고는 유료 주차장이 마련되어 있더라도 가격이 2 천원~3 천원 선에 형성되어 있습니다. 따라서 차량으로 이동할 경우 인근 공영주차장을 미리 확인하거나, 대중교통 이용을 권장합니다. 또한, 망원동은 주택가와 상가 단지가 혼재된 지역이므로, 클럽 입구에 대한 정확한 위치 파악이 필수적입니다.
+            </p>
         </div>
-    </section>
 
-    <section class="container">
-        <div class="info-grid">
-            <div class="info-card">
-                <div class="subtitle">📍 위치 & 접근성</div>
-                <h3>망원 클럽 거리</h3>
-                <p>망원동 클럽들은 대부분 망원역 1번 출구에서 도보 5~10분 거리에 몰려있어요. 주말에는 주차가 어려우니 대중교통을 추천! 밤늦게도 버스가 자주 다녀서 귀가도 편해요.</p>
-                <ul class="detail-list">
-                    <li><span class="label">망원역 도보</span> 3~8분</li>
-                    <li><span class="label">주차 가능</span> 일부 클럽 전용 주차장</li>
-                    <li><span class="label">야간 버스</span> 30분 간격 운행</li>
-                </ul>
-            </div>
+        <h2>02. 분위기별 층위 분석</h2>
+        <div class="info-box">
+            <p>
+                망원동 클럽은 층수에 따라 분위기가 명확하게 구분되는 경우가 많습니다. 1 층은 주로 로비와 입구 대기 공간으로 활용되며, 여기서는 보안 검색이나 의상 점검이 이루어집니다. 2 층과 3 층은 실제 파티 공간이나 댄스 플로어로 사용되는데, 이 층들은 조명과 사운드 시스템의 밀도 차이가 큽니다. 'Quiet' 카테고리는 주로 소규모 바형 공간으로, 대화를 하거나 음료를 마시는 데 적합하며, 'Loud' 카테고리는 대형 스피커와 강한 비트를 선호하는 파티러들을 위한 곳입니다.
+            </p>
+            <p>
+                또한, 음악 장르별 특성을 고려하여 선택할 수 있습니다. 망원동 클럽 중 일부는 House, Techno 등 일렉트로닉 음악을 전문으로 하는 경우가 많고, 다른 곳은 R&B 또는 Pop 중심의 사운드 시스템을 갖추고 있습니다. 방문 목적에 따라 '집중적인 춤'을 원한다면 대형 댄스 플로어 공간을, '소모임 활동'을 원한다면 소규모 라운지 타입의 공간이 적합합니다.
+            </p>
+        </div>
 
-            <div class="info-card">
-                <div class="subtitle">🕐 운영시간</div>
-                <h3>언제 갈까?</h3>
-                <p>보통 오후 8시부터 문 열고, 진짜 재미는 11시 이후부터! 주말에는 새벽 4~5시까지 영업하는 곳이 많아요. 평일에는 사람이 적을 수 있으니 체크 필수!</p>
-                <ul class="detail-list">
-                    <li><span class="label">평일</span> 20:00 ~ 02:00</li>
-                    <li><span class="label">금요일</span> 20:00 ~ 04:00</li>
-                    <li><span class="label">토요일</span> 19:00 ~ 05:00</li>
-                    <li><span class="label">일요일</span> 휴무 or 20:00 ~ 24:00</li>
-                </ul>
-            </div>
+        <h2>03. 가격대별 비용 구성</h2>
+        <div class="info-box">
+            <p>
+                망원동 클럽의 비용 구조는 크게 '입장료'와 '음료비'로 나뉩니다. 일반적인 입장료는 5 천원~1 만 원 선이며, 이는 시간대나 요일에 따라 변동될 수 있습니다. 예를 들어, 금요일과 토요일 밤늦은 시간대에는 추가 요금이 부과되는 경우가 많습니다. 음료 가격은 칵테일 종류와 용량에 따라 다르지만, 캔맥주는 4 천원~5 천원, 소맥은 6 천원~7 천원 선이 일반적인 가격대를 형성합니다.
+            </p>
+            <p>
+                고급 칵테일을 주문할 경우 추가 비용이 발생할 수 있으며, 이는 별도의 시그니처 메뉴 가격이 적용될 수 있습니다. 또한, 테이블 예약 시에는 보증금 또는 최소 소비 금액 (Minimum Spend) 이 요구되는 경우가 있으므로, 방문 전 미리 확인하는 것이 좋습니다. 망원동 클럽 중 일부는 VIP 룸을 별도로 운영하고 있는데, 이는 더 높은 비용이 부과되지만 프라이버시를 원할 때 유용합니다.
+            </p>
+        </div>
 
-            <div class="info-card">
-                <div class="subtitle">💰 가격 정보</div>
-                <h3>지갑 사정에 맞게</h3>
-                <p>커버차지는 보통 15,000~25,000원 선이에요. 음료는 8,000원부터 시작하고, 병째 시키면 50,000~100,000원까지 다양. 처음 가는 클럽은 커버차지부터 체크하세요!</p>
-                <ul class="detail-list">
-                    <li><span class="label">커버차지</span> 15,000 ~ 25,000원</li>
-                    <li><span class="label">맥주</span> 8,000 ~ 12,000원</li>
-                    <li><span class="label">양주(병)</span> 50,000 ~ 120,000원</li>
-                    <li><span class="label">얼리버드 할인</span> 10시 전 입장 5,000원 할인</li>
-                </ul>
-            </div>
+        <h2>04. 방문 전 체크리스트</h2>
+        <div class="info-box">
+            <p>
+                망원동 클럽 방문 시 Dress Code(의상 규정) 을 반드시 확인해야 합니다. 일부 클럽은 정장이나 스니커즈 착용을 의무화하거나, 반바지나 짧은 상의를 배제하는 경우가 있습니다. 특히 여름철에는 샌들만 신고 입장할 수 없는 공간이 많으므로 신발을 신선평가합니다. 또한, 신분증 (주민등록증 또는 여권) 을 지참해야 하며, 19 세 미만의 경우 추가 확인이 필요할 수 있습니다.
+            </p>
+            <p>
+                마지막으로, 예약 시스템을 운영하는 클럽은 많습니다. 특히 금요일과 토요일 등 주말에는 사전 예약을 통해 대기 시간을 줄일 수 있으므로, 방문 전 공식 홈페이지나 SNS 를 통해 현재 운영 상황을 확인하는 것이 좋습니다. 망원동 클럽은 대부분 19:00~23:00 까지 입장 가능 시간이므로, 이 시간대를 고려하여 이동 계획을 세우는 것이 효율적입니다.
+            </p>
+        </div>
+    </main>
+</div>
 
-            <div class="info-card">
-                <div class="subtitle">🎵 분위기 & 음악</div>
-                <h3>취향저격 클럽 찾기</h3>
-                <p>힙합이 주류를 이루지만, 하우스나 얼터너티브를 틀어주는 곳도 있어요. 분위기는 크게 세 가지: 활기찬 파티 분위기, 감성적인 라운지, 그리고 복합 문화공간 느낌. 내 취향에 맞는 곳을 골라보세요!</p>
-                <ul class="detail-list">
-                    <li><span class="label">힙합/랩</span> 60%</li>
-                    <li><span class="label">하우스/일렉트로닉</span> 25%</li>
-                    <li><span class="label">얼터너티브/인디</span> 15%</li>
-                </ul>
-            </div>
+<script>
+    // Minimal JS for interaction (Optional)
+    document.querySelectorAll('nav a').forEach(anchor => {
+        anchor.addEventListener('click', function() {
+            document.querySelector('.active').classList.remove('active');
+            this.classList.add('active');
+        });
+    });
+</script>
 
-            <div class="info-card">
-                <div class="subtitle">👥 인원 & 예약</div>
-                <h3>단체도 환영!</h3>
-                <p>4~6명이 오기 좋은 테이블이 많고, 단체 예약은 미리 전화하는 게 안전해요. 주말에는 웨이팅이 있을 수 있으니 2~3일 전에 예약하는 걸 추천! 저희 번호로 연락주시면 대신 예약도 도와드려요.</p>
-                <ul class="detail-list">
-                    <li><span class="label">추천 인원</span> 4~6명</li>
-                    <li><span class="label">단체 예약</span> 8명 이상 필수</li>
-                    <li><span class="label">예약 마감</span> 주말 2~3일 전 마감</li>
-                </ul>
 </body>
 </html>
